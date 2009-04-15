@@ -1,0 +1,46 @@
+<div id='header'>
+<%= render :partial => 'header'%>	
+</div>
+<div class="news">
+<div><p class="title">CARTÃO DE PONTO</p></div>	
+<div><%= avatar_for(@funcionario.email) %></div>
+	<div>
+		  <br>
+          <%=h @funcionario.nome %>	
+          <br>
+          <%=h @funcionario.email %>
+          <br>
+ 	      <%=h @funcionario.cargo %>
+ 	      <br>
+ 	      <% form_tag @funcionario.id.to_s, :method => 'Get' do %>
+        <%= select_tag("month", options_for_select([["Marco","3"],["Abril","4"]],params[:month]), { :index => nil}) %>
+        <%= select_tag("year", options_for_select(["2008","2009"],params[:year]), { :index => nil}) %>
+        <%= submit_tag "Pesquisar" %>
+	<% end %>
+ 	</div>
+</div>
+ 
+<div>
+    <%= link_to 'Voltar para página principal', funcionarios_path %>
+</div>
+<table border="0" cellspacing="0" cellpadding="0" class="wide forums">
+  <tr>
+  	<th class="la" width="20%">Dia</th>
+    <th class="la" width="20%">Entrada</th>
+    <th class="la" width="20%">Saída Almoço</th>
+    <th class="la" width="20%">Volta Almoço</th>
+    <th class="la" width="20%">Saída</th>
+     </tr>
+ 
+ <% for marcacaoponto in @marcacaopontos %>
+   <tr>
+  	<td><%=h marcacaoponto.data.strftime("%d/%m/%Y") %></td>
+    <td><%=h marcacaoponto.formathora(marcacaoponto.hora1) %></td>
+    <td><%=h marcacaoponto.formathora(marcacaoponto.hora2) %></td>
+    <td><%=h marcacaoponto.formathora(marcacaoponto.hora3) %></td>
+    <td><%=h marcacaoponto.formathora(marcacaoponto.hora4) %></td>
+  </tr>
+  <% end %>
+</table>
+<p>
+

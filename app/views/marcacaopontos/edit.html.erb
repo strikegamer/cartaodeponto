@@ -1,0 +1,36 @@
+<h1>Editing marcacaoponto</h1>
+
+<% form_for(@marcacaoponto) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </p>
+  <p>
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </p>
+  <p>
+    <%= f.label :hora1 %><br />
+    <%= f.text_field :hora1 %>
+  </p>
+  <p>
+    <%= f.label :hora2 %><br />
+    <%= f.text_field :hora2 %>
+  </p>
+  <p>
+    <%= f.label :hora3 %><br />
+    <%= f.text_field :hora3 %>
+  </p>
+  <p>
+    <%= f.label :hora4 %><br />
+    <%= f.text_field :hora4 %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @marcacaoponto %> |
+<%= link_to 'Back', marcacaopontos_path %>

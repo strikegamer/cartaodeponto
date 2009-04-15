@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/79/trunk/scripts/msn
+END
+msn.rb
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/57/trunk/scripts/msn/msn.rb
+END
+msnconnection.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/79/trunk/scripts/msn/msnconnection.rb
+END
+threadsocket.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/78/trunk/scripts/msn/threadsocket.rb
+END
+msnchatsession.rb
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/78/trunk/scripts/msn/msnchatsession.rb
+END
+msnutil.rb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/78/trunk/scripts/msn/msnutil.rb
+END

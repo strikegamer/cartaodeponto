@@ -1,0 +1,60 @@
+pre{
+	font-size: 12px;
+}
+hr{
+	margin: 0;
+	padding: 0;
+}
+p{
+	clear: both;
+	font-size: 14px;
+}
+hr{
+	width: 485px;
+	clear:both;
+}
+img{
+	padding-left: 5px;
+	float: left;
+}
+.box{
+	float: left;
+	margin: 0 15px 15px 0;
+	font-size: 10px;
+	background: #eee url(../images/bg.png) repeat-x top;
+}
+.formatting{width: 151px;}
+.listing{width: 234px;}
+.coding{width: 485px;}
+.name-span{
+	float: left;
+	margin-top: 3px;
+	font-size: 12px;
+	font-weight: bold;
+}
+.example{
+	clear: both;
+	padding: 10px 0 0 10px;
+}
+.formatted{
+	padding: 0 0 15px 28px;
+	font-size: 12px;
+}
+.bold{font-weight: bold;}
+.italic{font-style: italic;}
+.underline{text-decoration: underline;}
+.kind{
+	font-size: 13px;
+	width: 481px;
+	padding: 2px;
+	background-color: #ddd;
+}
+#more{
+	width: 481px;
+	font-size: 11px;
+	padding: 2px;
+	background-color: #ddd;
+}
+#page{
+	margin: 0 auto;
+}

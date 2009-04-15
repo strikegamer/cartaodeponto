@@ -1,0 +1,221 @@
+/********************************************
+AUTHOR:        Bruno Freitas
+WEBSITE:       http://www.planobe.com.br/
+TEMPLATE NAME: Plano Bê 2.0
+********************************************/
+
+/* HTML ELEMENTS */
+select{
+	padding: 1px;
+}
+
+/* NAVIGATION */
+
+#global-nav ul{
+	padding: 0;
+	margin: 0;
+	margin-top: -10px;
+	list-style: none;
+	overflow: hidden;
+}
+#global-nav ul li{
+	width: auto;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+#global-nav ul li a{
+	width: 10em;
+	padding: 1em 1em .5em 1em;
+	margin: 0;
+	float: left;
+	display: block;
+	line-height: 1.4em;
+	border: none;
+	text-decoration: none;
+	color: #7b828c;
+	background: url(../images/nav-bg.gif) no-repeat bottom left;
+}
+#global-nav ul li a strong{
+	display: block;
+	font-size: 1em;
+	line-height: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #e3e3e3;
+}
+#global-nav li a:hover{
+	background: url(../images/tab-hover.gif) repeat-x bottom left;
+}
+#global-nav li a.active{
+	color: #7b828c;
+	background: url(../images/tab-on-noise.gif) repeat-x bottom left;
+}
+#global-nav ul li a:hover strong{	
+	color: #fff;
+}
+#global-nav ul li a.active strong{
+	color: #fff;
+}
+
+/* HEADER */
+
+#global-header{
+	width: 100%;
+	padding-top: 5px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-size: 62.5%;
+	background: #383d44 url(../images/h-bg.gif) repeat-x bottom left;
+}
+#global-header-inner{
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	width: 976px;
+	margin: 0 auto;
+	font-size: 1.2em;
+}
+#global-header-inner img{
+	float:right;
+	border: none;
+}
+#language{
+	width: auto;
+	float: right;
+	margin-top: 15px;
+	margin-bottom: -19px !important;
+}
+
+/* FOOTER */
+
+#global-footer{
+	width: 100%;
+	background: #383d44 url(../images/h-bg.gif) repeat-x bottom left;
+}
+#global-footer-inner{
+	width: 976px;
+	padding-top: 15px;
+	padding-bottom: 35px;
+	margin: 0 auto;
+	font-size: 12px;
+	text-align: center;
+	color: #e3e3e3;
+}
+#global-footer-inner img{
+	padding: 15px 0;
+	border: none;
+}
+#global-footer-inner p{
+	margin-bottom: -6px;
+}
+#global-footer-inner a{
+	text-decoration: none;
+	font-weight: bold;
+	color: #fff;
+}
+
+/* Buttons */
+.botNegrito{
+	width:23px;
+	height:23px;
+	background: url(../images/b_01_off.png);
+}
+.botNegrito:hover {
+	width:23px;
+	height:23px;
+	background: url(../images/b_01_on.png);
+}
+.botItalico{
+	width:23px;
+	height:23px;
+	background: url(../images/b_02_off.png);
+}
+.botItalico:hover {
+	width:23px;
+	height:23px;
+	background: url(../images/b_02_on.png);
+}
+.botSublinhado{
+	width:23px;
+	height:23px;
+	background: url(../images/b_03_off.png);
+}
+.botSublinhado:hover {
+	width:23px;
+	height:23px;
+	background: url(../images/b_03_on.png);
+}
+.botMarcador{
+	width:23px;
+	height:23px;
+	background: url(../images/b_04_off.png);
+}
+.botMarcador:hover {
+	width:23px;
+	height:23px;
+	background: url(../images/b_04_on.png);
+}
+.botNumerador{
+	width:23px;
+	height:23px;
+	background: url(../images/b_05_off.png);
+}
+.botNumerador:hover {
+	width:23px;
+	height:23px;
+	background: url(../images/b_05_on.png);
+}
+.botCodigo{
+	width:72px;
+	height:23px;
+	background: url(../images/b_06_off.png);
+}
+.botCodigo:hover {
+	width:72px;
+	height:23px;
+	background: url(../images/b_06_on.png);
+}
+.botPre{
+	width:59px;
+	height:23px;
+	background: url(../images/b_07_off.png);
+}
+.botPre:hover {
+	width:59px;
+	height:23px;
+	background: url(../images/b_07_on.png);
+}
+.botHelp{
+	width:23px;
+	height:23px;
+	background: url(../images/b_08_off.png);
+}
+.botHelp:hover {
+	width:23px;
+	height:23px;
+	background: url(../images/b_08_on.png);
+}
+
+/* Required fields */
+.req{
+  padding-left: 5px;
+  color: #F00;
+}
+
+/* Error Explanation Customization */
+#errorExplanation ul{
+  background:#c00;
+  color:white;
+  list-style:none;
+  padding: 12px 0 5px 20px;
+}
+#errorExplanation li{
+  padding-bottom: 5px;
+}
+
+/* Forgot Password */
+.forgotPassword{
+  font-family:'Lucida Grande', Tahoma, Arial, Helvetica, sans-serif;
+  color:#666;
+  font-size:0.75em;
+  font-weight:normal;
+}

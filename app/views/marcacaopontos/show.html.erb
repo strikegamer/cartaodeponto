@@ -1,0 +1,33 @@
+<div id='header'>
+<%= render :partial => 'header'%>	
+</div>
+<p>
+  <b>Id funcionario:</b>
+  <%=h @marcacaoponto.funcionario_id %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%=h @marcacaoponto.data %>
+</p>
+
+<p>
+  <b>Hora1:</b>
+  <%=h @marcacaoponto.hora1 %>
+</p>
+<p>
+  <b>Hora2:</b>
+  <%=h @marcacaoponto.hora2 %>
+</p>
+<p>
+  <b>Hora3:</b>
+  <%=h @marcacaoponto.hora3 %>
+</p>
+<p>
+  <b>Hora4:</b>
+  <%=h @marcacaoponto.hora4 %>
+</p>
+
+
+<%= link_to 'Edit', edit_marcacaoponto_path(@marcacaoponto) %> |
+<%= link_to 'Back', marcacaopontos_path %>

@@ -1,0 +1,26 @@
+<div id='header'>
+<%= render :partial => 'header'%>	
+</div>
+<h2><p class="notice">Clique no nome do funcionário para visualizar seu ponto eletrônico</p></h2>
+
+<table class="wide forums">
+  <tr>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Cargo</th>
+  </tr>
+  <br>
+<%= link_to 'Novo Funcionário', new_funcionario_path %>
+<br>
+<% for funcionario in @funcionarios %>
+  <tr>
+    <td><%= avatar_for(funcionario.email) %></td>      
+    <td><%= link_to funcionario.nome, funcionario %></td>
+    <td><%=h funcionario.email %></td>
+    <td><%=h funcionario.cargo %></td>
+    <td><%= link_to 'Editar Dados', edit_funcionario_path(funcionario) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

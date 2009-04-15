@@ -1,0 +1,27 @@
+<div id='header'>
+<%= render :partial => 'header'%>	
+</div>
+<h1>Editar Dados</h1>
+
+<% form_for(@funcionario) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :cargo %><br />
+    <%= f.text_field :cargo %>
+  </p>
+  <p>
+    <%= f.submit "Atualizar Dados" %>
+  </p>
+<% end %>
+
+<%= link_to 'Mostrar Cartão de Ponto', @funcionario %> |
+<%= link_to 'Voltar para Principal', funcionarios_path %>

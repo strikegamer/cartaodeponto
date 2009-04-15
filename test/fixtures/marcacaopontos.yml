@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id_funcionario: 
+  data: 2009-03-24
+  hora: MyString
+
+two:
+  id_funcionario: 
+  data: 2009-03-24
+  hora: MyString

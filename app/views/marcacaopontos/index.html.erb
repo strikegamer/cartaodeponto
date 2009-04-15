@@ -1,0 +1,35 @@
+<div id='header'>
+<%= render :partial => 'header'%>	
+</div>
+<h1>Marcação de Ponto</h1>
+
+
+<table class="wide forums">
+  <tr>
+  	<th>Foto ou Email</th>
+  	<th>Funcionário</th>
+    <th>Dia</th>
+    <th>Hora Entrada</th>
+    <th>Hora Saída Almoço</th>
+    <th>Hora Volta Almoço</th>
+    <th>Hora Saída</th>
+     </tr>
+
+<% for marcacaoponto in @marcacaopontos %>
+  <tr>
+  	<td><%= avatar_for(marcacaoponto.funcionario.email) %></td>
+    <td><%=h marcacaoponto.funcionario.nome %></td>
+    <td><%=h marcacaoponto.data %></td>
+    <td><%=h marcacaoponto.formathora(marcacaoponto.hora1) %></td>
+    <td><%=h marcacaoponto.formathora(marcacaoponto.hora2) %></td>
+    <td><%=h marcacaoponto.formathora(marcacaoponto.hora3) %></td>
+    <td><%=h marcacaoponto.formathora(marcacaoponto.hora4) %></td>
+    <td><%= link_to 'Editar Dados', edit_marcacaoponto_path(marcacaoponto) %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<br />
+
+<%= link_to 'Nova marcação manual', new_marcacaoponto_path %>
