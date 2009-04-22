@@ -47792,3 +47792,945 @@ Rendering template within layouts/funcionarios
 Rendering funcionarios/show
 Rendered funcionarios/_header (0.4ms)
 Completed in 211ms (View: 120, DB: 16) | 200 OK [http://localhost/funcionarios/9]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-22 11:31:01) [GET]
+
+ActionController::RoutingError (No route matches "/cartaodeponto" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-04-22 11:31:19) [GET]
+
+ActionController::RoutingError (No route matches "/cartaodeponto/funcionarios" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2009-04-22 11:31:27) [GET]
+  [4;36;1mSQL (2.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 104ms (View: 14, DB: 3) | 200 OK [http://localhost/rails/info/properties]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 11:31:35) [GET]
+  [4;36;1mFuncionario Load (6.5ms)[0m   [0;1mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (1.3ms)
+Completed in 462ms (View: 370, DB: 6) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 11:31:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (6.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.2ms)
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #43 of app/views/funcionarios/show.html.erb:
+40:     <td><%=h marcacaoponto.formathora(marcacaoponto.hora2) %></td>
+41:     <td><%=h marcacaoponto.formathora(marcacaoponto.hora3) %></td>
+42:     <td><%=h marcacaoponto.formathora(marcacaoponto.hora4) %></td>
+43:     <td><%=h marcacaoponto.horastrabalhadasdia(marcacaoponto.data) %></td>
+44:   </tr>
+45:   <% end %>
+46: </table>
+
+    app/views/funcionarios/show.html.erb:43:in `horastrabalhadasdia'
+    app/views/funcionarios/show.html.erb:43
+    app/views/funcionarios/show.html.erb:36:in `each'
+    app/views/funcionarios/show.html.erb:36
+    app/controllers/funcionarios_controller.rb:28:in `show'
+
+Rendered rescues/_trace (380.0ms)
+Rendered rescues/_request_and_response (5.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 11:32:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (6.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.2ms)
+Completed in 128ms (View: 74, DB: 8) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 12:07:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+
+SyntaxError (/Users/strikegamer/Rails/cartaodeponto/app/models/marcacaoponto.rb:15: syntax error, unexpected ')', expecting ']'):
+  app/controllers/funcionarios_controller.rb:26:in `show'
+
+Rendered rescues/_trace (436.4ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 12:07:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mFuncionario Load (1.2ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (7.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+Completed in 140ms (View: 80, DB: 8) | 200 OK [http://localhost/funcionarios/1]
+  [4;36;1mFuncionario Load (1.2ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (0.8ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01'))) [0m
+  [4;36;1mMarcacaoponto Load (5.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1) [0m
+  [4;35;1mMarcacaoponto Load (0.7ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01' AND '2009-04-01'))) [0m
+  [4;36;1mMarcacaoponto Load (0.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '04/01/2009'))) [0m
+  [4;35;1mMarcacaoponto Load (0.8ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '04-01-2009'))) [0m
+  [4;36;1mMarcacaoponto Load (0.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01'))) [0m
+
+
+Processing MarcacaopontosController#index (for 127.0.0.1 at 2009-04-22 12:23:50) [GET]
+  [4;36;1mMarcacaoponto Load (45.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" ORDER BY id[0m
+Rendering template within layouts/marcacaopontos
+Rendering marcacaopontos/index
+Rendered marcacaopontos/_header (1.9ms)
+  [4;35;1mFuncionario Load (1.4ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mFuncionario Load (1.4ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mFuncionario Load (1.2ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mFuncionario Load (1.4ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;36;1mFuncionario Load (1.2ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mFuncionario Load (1.1ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mFuncionario Load (1.1ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 4) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 4) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 3) [0m
+Completed in 972ms (View: 878, DB: 57) | 200 OK [http://localhost/marcacaopontos]
+
+
+Processing MarcacaopontosController#edit (for 127.0.0.1 at 2009-04-22 12:23:55) [GET]
+  Parameters: {"id"=>"27"}
+  [4;36;1mMarcacaoponto Load (1.4ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos"."id" = 27) [0m
+Rendering template within layouts/marcacaopontos
+Rendering marcacaopontos/edit
+Completed in 76ms (View: 49, DB: 1) | 200 OK [http://localhost/marcacaopontos/27/edit]
+  [4;35;1mMarcacaoponto Load (1.5ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 16:17:42) [GET]
+  [4;36;1mFuncionario Load (7.0ms)[0m   [0;1mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (1.3ms)
+Completed in 133ms (View: 80, DB: 7) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:17:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (40.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.6ms)
+
+ActionView::TemplateError (wrong number of arguments (1 for 2)) on line #43 of app/views/funcionarios/show.html.erb:
+40:     <td><%=h marcacaoponto.formathora(marcacaoponto.hora2) %></td>
+41:     <td><%=h marcacaoponto.formathora(marcacaoponto.hora3) %></td>
+42:     <td><%=h marcacaoponto.formathora(marcacaoponto.hora4) %></td>
+43:     <td><%=h marcacaoponto.horastrabalhadasdia(marcacaoponto.data) %></td>
+44:   </tr>
+45:   <% end %>
+46: </table>
+
+    app/views/funcionarios/show.html.erb:43:in `horastrabalhadasdia'
+    app/views/funcionarios/show.html.erb:43
+    app/views/funcionarios/show.html.erb:36:in `each'
+    app/views/funcionarios/show.html.erb:36
+    app/controllers/funcionarios_controller.rb:28:in `show'
+
+Rendered rescues/_trace (206.6ms)
+Rendered rescues/_request_and_response (5.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:19:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.4ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (11.1ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.4ms)
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:22:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mFuncionario Load (1.4ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (7.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (1.3ms)
+Completed in 453ms (View: 338, DB: 8) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:23:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mFuncionario Load (1.2ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (10.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.5ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (3.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.2ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.7ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.8ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.8ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 234ms (View: 149, DB: 27) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:23:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mFuncionario Load (1.4ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (7.3ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (3.7ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.8ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 237ms (View: 161, DB: 26) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 16:24:29) [GET]
+  [4;36;1mFuncionario Load (8.4ms)[0m   [0;1mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (0.2ms)
+Completed in 81ms (View: 45, DB: 8) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:24:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFuncionario Load (1.8ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (9.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.9ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (2.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (2.3ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 254ms (View: 171, DB: 26) | 200 OK [http://localhost/funcionarios/2]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 16:24:50) [GET]
+  [4;35;1mFuncionario Load (7.1ms)[0m   [0mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (0.3ms)
+Completed in 67ms (View: 38, DB: 7) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:24:59) [GET]
+  Parameters: {"id"=>"9"}
+  [4;36;1mFuncionario Load (1.4ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (6.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (2.2ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (3.2ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (1.5ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (1.5ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 9) [0m
+  [4;35;1mMarcacaoponto Load (1.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 9 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 220ms (View: 150, DB: 22) | 200 OK [http://localhost/funcionarios/9]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:27:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mFuncionario Load (1.2ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (6.8ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.5ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.7ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.2ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 220ms (View: 145, DB: 23) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 16:45:05) [GET]
+  [4;36;1mFuncionario Load (7.1ms)[0m   [0;1mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (0.3ms)
+Completed in 82ms (View: 40, DB: 7) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:45:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (8.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (1.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.2ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.2ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.4ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.2ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (285.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 541ms (View: 147, DB: 308) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:45:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.4ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (7.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 210ms (View: 139, DB: 21) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:47:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (6.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.9ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 206ms (View: 138, DB: 21) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:48:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.5ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (7.4ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 209ms (View: 142, DB: 22) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:49:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (7.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (2.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (2.2ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (2.9ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+  [4;36;1mMarcacaoponto Load (2.9ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 2 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 533ms (View: 456, DB: 26) | 200 OK [http://localhost/funcionarios/2]
+
+
+Processing FuncionariosController#edit (for 127.0.0.1 at 2009-04-22 16:49:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mFuncionario Load (1.8ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 2) [0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/edit
+Rendered funcionarios/_header (0.2ms)
+Completed in 98ms (View: 71, DB: 2) | 200 OK [http://localhost/funcionarios/2/edit]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 16:50:03) [GET]
+  [4;36;1mFuncionario Load (7.8ms)[0m   [0;1mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (0.3ms)
+Completed in 65ms (View: 38, DB: 8) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:50:09) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mFuncionario Load (1.6ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (6.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (1.4ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (2.3ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 7) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 7 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 208ms (View: 139, DB: 22) | 200 OK [http://localhost/funcionarios/7]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 16:51:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (7.4ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (3.3ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.2ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 209ms (View: 138, DB: 24) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 17:20:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.5ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (6.9ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.2ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (2.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.4ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+
+ActionView::TemplateError (undefined method `horastrabalhadasnomes' for #<Array:0x27c3d94>) on line #52 of app/views/funcionarios/show.html.erb:
+49:       <th class="la" width="20%"></th>
+50:       <th class="la" width="20%"></th>
+51:       <th class="la" width="20%">Total do Mês: </th>
+52:       <th class="la" width="20%"><%=@marcacaopontos.horastrabalhadasnomes(@funcionario.id,params[:month],params[:year])%></th>
+53:        </tr>
+54: </table>
+55: <p>
+
+    app/views/funcionarios/show.html.erb:52
+    app/controllers/funcionarios_controller.rb:28:in `show'
+
+Rendered rescues/_trace (413.5ms)
+Rendered rescues/_request_and_response (5.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 17:21:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mFuncionario Load (1.8ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (6.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.6ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `horastrabalhadasnomes' for #<Class:0x26d6170>) on line #52 of app/views/funcionarios/show.html.erb:
+49:       <th class="la" width="20%"></th>
+50:       <th class="la" width="20%"></th>
+51:       <th class="la" width="20%">Total do Mês: </th>
+52:       <th class="la" width="20%"><%=Marcacaoponto.horastrabalhadasnomes(@funcionario.id,params[:month],params[:year])%></th>
+53:        </tr>
+54: </table>
+55: <p>
+
+    app/views/funcionarios/show.html.erb:52
+    app/controllers/funcionarios_controller.rb:28:in `show'
+
+Rendered rescues/_trace (423.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 17:25:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mFuncionario Load (3.4ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (7.3ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.5ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.5ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.5ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 349ms (View: 258, DB: 24) | 200 OK [http://localhost/funcionarios/1]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 17:27:18) [GET]
+  [4;36;1mFuncionario Load (6.2ms)[0m   [0;1mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (0.3ms)
+Completed in 77ms (View: 48, DB: 6) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 17:27:21) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mFuncionario Load (1.2ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (7.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (2.1ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (3.1ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (1.7ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (2.3ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (2.2ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mMarcacaoponto Load (1.4ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-13 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 8) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 8 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 647ms (View: 574, DB: 24) | 200 OK [http://localhost/funcionarios/8]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 17:27:24) [GET]
+  [4;35;1mFuncionario Load (7.6ms)[0m   [0mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (0.3ms)
+Completed in 62ms (View: 33, DB: 8) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 17:27:26) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mFuncionario Load (1.9ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (8.1ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (1.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (1.9ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (3.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (3.7ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (2.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (1.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (1.7ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-11 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mMarcacaoponto Load (1.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-13 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-11 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 5) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 5 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 369ms (View: 291, DB: 29) | 200 OK [http://localhost/funcionarios/5]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 17:27:30) [GET]
+  [4;36;1mFuncionario Load (7.1ms)[0m   [0;1mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (0.7ms)
+Completed in 62ms (View: 34, DB: 7) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 17:27:33) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mFuncionario Load (1.7ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (8.9ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (2.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (1.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (3.4ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (1.5ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (2.8ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mMarcacaoponto Load (1.9ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-13 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 6) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 6 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 754ms (View: 665, DB: 28) | 200 OK [http://localhost/funcionarios/6]
+
+
+Processing FuncionariosController#index (for 127.0.0.1 at 2009-04-22 17:28:20) [GET]
+  [4;35;1mFuncionario Load (6.3ms)[0m   [0mSELECT * FROM "funcionarios" ORDER BY nome[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/index
+Rendered funcionarios/_header (0.3ms)
+Completed in 68ms (View: 36, DB: 6) | 200 OK [http://localhost/funcionarios]
+
+
+Processing FuncionariosController#show (for 127.0.0.1 at 2009-04-22 17:28:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mFuncionario Load (1.2ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (6.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+Rendering template within layouts/funcionarios
+Rendering funcionarios/show
+Rendered funcionarios/_header (0.2ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.6ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.3ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (4.4ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (2.1ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.5ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.9ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mMarcacaoponto Load (1.9ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data BETWEEN '2009-04-01 00:00:00' AND '2009-04-30 00:00:00'))) ORDER BY data[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-01 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-02 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-03 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-06 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-07 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-08 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-09 00:00:00'))) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "funcionarios" WHERE ("funcionarios"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "marcacaopontos" WHERE ("marcacaopontos".funcionario_id = 1 AND ((data = '2009-04-13 00:00:00'))) [0m
+Completed in 327ms (View: 254, DB: 26) | 200 OK [http://localhost/funcionarios/1]

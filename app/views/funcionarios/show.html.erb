@@ -30,6 +30,7 @@
     <th class="la" width="20%">Saída Almoço</th>
     <th class="la" width="20%">Volta Almoço</th>
     <th class="la" width="20%">Saída</th>
+    <th class="la" width="20%">Horas Trabalhadas</th>
      </tr>
  
  <% for marcacaoponto in @marcacaopontos %>
@@ -39,8 +40,17 @@
     <td><%=h marcacaoponto.formathora(marcacaoponto.hora2) %></td>
     <td><%=h marcacaoponto.formathora(marcacaoponto.hora3) %></td>
     <td><%=h marcacaoponto.formathora(marcacaoponto.hora4) %></td>
+    <td><%=h marcacaoponto.horastrabalhadasdia(@funcionario.id,marcacaoponto.data) %></td>
   </tr>
   <% end %>
+  <tr>
+      <th class="la" width="20%"></th>
+      <th class="la" width="20%"></th>
+      <th class="la" width="20%"></th>
+      <th class="la" width="20%"></th>
+      <th class="la" width="20%">Total do Mês: </th>
+      <th class="la" width="20%"><%=h @marcacaopontos[0].horastrabalhadasnomes(@funcionario.id,params[:month],params[:year]) %></th>
+       </tr>
 </table>
 <p>
 

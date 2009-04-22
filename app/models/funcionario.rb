@@ -82,9 +82,9 @@ class Funcionario < ActiveRecord::Base
       	       retorno = retorno + "Saida: " + hora4 + "\n"
             end      
             return retorno
-          else
+       else
             return "nada carai"	
-  	      end
+  	   end
     end
   
 	
