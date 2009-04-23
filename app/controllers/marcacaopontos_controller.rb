@@ -2,7 +2,7 @@ class MarcacaopontosController < ApplicationController
   # GET /marcacaopontos
   # GET /marcacaopontos.xml
   def index
-    @marcacaopontos = Marcacaoponto.find(:all,:order=> 'id')
+    @marcacaopontos = Marcacaoponto.find(:all,:order=> 'data desc')
 
     respond_to do |format|
       format.html # index.html.erb
