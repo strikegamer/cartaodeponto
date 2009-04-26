@@ -55,24 +55,34 @@ class Marcacaoponto < ActiveRecord::Base
       last = Date.civil(year, month, -1)  
       funcionario = Funcionario.find(funcionario_id) 
       @marcacaopontos = funcionario.marcacaopontos.find(:all,:conditions => ["(data BETWEEN ? AND ?)", first.to_datetime, last.to_datetime],:order => 'data')
-      totalgeralminutos = 0
       
-      for marcacaoponto in @marcacaopontos
-        begin
-        horadia = horastrabalhadasdia(funcionario.id,marcacaoponto.data)
-        totalminutos = horadia.split(':')[0].to_i
-        totalminutos = totalminutos * 60
-        totalminutos = totalminutos + horadia.split(':')[1].to_i
-        totalgeralminutos = totalgeralminutos + totalminutos
-        rescue 
-        end
-      end
-       
-       horatotal = (totalgeralminutos / 60).to_i
-       minutostotal = (totalgeralminutos % 60.to_f).to_i
-       
-       return ("%02d" % horatotal.to_s) + ":" + ("%02d" % minutostotal.to_s)
-    end
+      if @marcacaopontos.size > 0
+      
+         totalgeralminutos = 0
+      
+      
+         for marcacaoponto in @marcacaopontos
+           begin
+             horadia = horastrabalhadasdia(funcionario.id,marcacaoponto.data)
+             totalminutos = horadia.split(':')[0].to_i
+             totalminutos = totalminutos * 60
+             totalminutos = totalminutos + horadia.split(':')[1].to_i
+             totalgeralminutos = totalgeralminutos + totalminutos
+           rescue 
+           end
+         end
+      
+         if totalgeralminutos > 0
+             horatotal = (totalgeralminutos / 60).to_i
+             minutostotal = (totalgeralminutos % 60.to_f).to_i
+             return ("%02d" % horatotal.to_s) + ":" + ("%02d" % minutostotal.to_s)
+         else
+           return "não encontrados dias trabalhados neste mês"
+         end
+      else
+          return "não encontrados dias trabalhados neste mês" 
+      end     
+  end
     
   def convertparaminutos(data)
       result = data.hour * 60
