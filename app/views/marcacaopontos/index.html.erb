@@ -20,10 +20,10 @@
   	<td><%= avatar_for(marcacaoponto.funcionario.email) %></td>
     <td><%=h marcacaoponto.funcionario.nome %></td>
     <td><%=h marcacaoponto.data %></td>
-    <td><%=h marcacaoponto.formathora(marcacaoponto.hora1) %></td>
-    <td><%=h marcacaoponto.formathora(marcacaoponto.hora2) %></td>
-    <td><%=h marcacaoponto.formathora(marcacaoponto.hora3) %></td>
-    <td><%=h marcacaoponto.formathora(marcacaoponto.hora4) %></td>
+    <td><%=h marcacaoponto.funcionario.formathora(marcacaoponto.hora1) %></td>
+    <td><%=h marcacaoponto.funcionario.formathora(marcacaoponto.hora2) %></td>
+    <td><%=h marcacaoponto.funcionario.formathora(marcacaoponto.hora3) %></td>
+    <td><%=h marcacaoponto.funcionario.formathora(marcacaoponto.hora4) %></td>
     <td><%= link_to 'Editar Dados', edit_marcacaoponto_path(marcacaoponto) %></td>
   </tr>
 <% end %>
