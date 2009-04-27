@@ -36,11 +36,11 @@
  <% for marcacaoponto in @marcacaopontos %>
    <tr>
   	<td><%=h marcacaoponto.data.strftime("%d/%m/%Y") %></td>
-    <td><%=h marcacaoponto.formathora(marcacaoponto.hora1) %></td>
-    <td><%=h marcacaoponto.formathora(marcacaoponto.hora2) %></td>
-    <td><%=h marcacaoponto.formathora(marcacaoponto.hora3) %></td>
-    <td><%=h marcacaoponto.formathora(marcacaoponto.hora4) %></td>
-    <td><%=h marcacaoponto.horastrabalhadasdia(@funcionario.id,marcacaoponto.data) %></td>
+    <td><%=h @funcionario.formathora(marcacaoponto.hora1) %></td>
+    <td><%=h @funcionario.formathora(marcacaoponto.hora2) %></td>
+    <td><%=h @funcionario.formathora(marcacaoponto.hora3) %></td>
+    <td><%=h @funcionario.formathora(marcacaoponto.hora4) %></td>
+    <td><%=h @funcionario.horastrabalhadasdia(marcacaoponto.data) %></td>
   </tr>
   <% end %>
   <tr>
@@ -49,7 +49,8 @@
       <th class="la" width="20%"></th>
       <th class="la" width="20%"></th>
       <th class="la" width="20%">Total do Mês: </th>
-      <th class="la" width="20%"><%=h @funcionario.marcacaopontos[0].horastrabalhadasnomes(@funcionario.id,params[:month],params[:year]) %></th>
+      <th class="la" width="20%"><%=h @funcionario.horastrabalhadasnomes(
+      params[:month],params[:year]) %></th>
        </tr>
 </table>
 <p>
