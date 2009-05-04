@@ -95,7 +95,52 @@ class Funcionario < ActiveRecord::Base
   			return hora.strftime("%H:%M")
   		end
   	end
-
+  	
+  	def mesbr(mes)
+  	  mes = mes.to_s
+  	  result = nil
+  	  if mes == "1"
+    	   result = "Janeiro"
+  	  end
+    	if mes == "2"
+    	   result = "Fevereiro"
+    	end   
+      if mes == "3"
+     	   result = "Março"
+   	  end
+      if mes == "4"
+     	   result = "Abril"
+     	end   
+      if mes == "5"
+     	   result = "Maio"
+   	  end
+      if mes == "6"
+     	   result = "Junho"
+   	  end
+      if mes == "7"
+     	   result = "Julho"
+   	  end
+      if mes == "8"
+     	   result = "Agosto"
+   	  end
+      if mes == "9"
+     	   result = "Setembro"
+   	  end
+      if mes == "10"
+     	   result = "Outubro"
+   	  end
+      if mes == "11"
+     	   result = "Novembro"
+   	  end
+      if mes == "12"
+     	   result = "Dezembro"
+    	end
+    	return result
+	  end  	
+  	def hojeporextenso
+  	 mes = mesbr(Time.now.month.to_s)  	 
+  	 return Time.now.day.to_s + " de " + mes + " de " + Time.now.year.to_s  	  
+	  end
 
     def horastrabalhadasdia(data)
       # debugger

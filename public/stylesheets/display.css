@@ -1,3 +1,10 @@
+.cabecalhofuncionario {
+	display:block;
+}
+.detalhesprint {
+	display:none;
+}
+
 html{
 	overflow-y: scroll;
 }

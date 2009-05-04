@@ -1,6 +1,20 @@
+<div class="cabecalhofuncionario">
 <div id='header'>
 <%= render :partial => 'header'%>	
 </div>
+</div>
+
+<div class="detalhesprint">
+  	      <%= image_tag("logo.gif") %><BR>
+	      Plano Bê Desenvolvimento de Sistemas LTDA<BR>
+	      Rua Jovita de Melo, 850<BR>
+	      Bairro São José - Franca - SP<BR>
+	      CNPJ - 07.617.521/0001-31<BR><BR>
+          <%=h @funcionario.nome %>	- <%=h @funcionario.cargo %><p>
+          <%=@funcionario.mesbr(params[:month]) + "/" + params[:year] %>
+</div>
+
+<div class="cabecalhofuncionario">
 <div class="news">
 <div><p class="title">CARTÃO DE PONTO</p></div>	
 <div><%= avatar_for(@funcionario.email) %></div>
@@ -12,17 +26,22 @@
           <br>
  	      <%=h @funcionario.cargo %>
  	      <br>
- 	      <% form_tag @funcionario.id.to_s, :method => 'Get' do %>
+  	      <% form_tag @funcionario.id.to_s, :method => 'Get' do %>
         <%= select_tag("month", options_for_select([["Janeiro","1"],["Fevereiro","2"],["Marco","3"],["Abril","4"],["Maio","5"],["Junho","6"],["Julho","7"],["Agosto","8"],["Setembro","9"],["Outubro","10"],["Novembro","11"],["Dezembro","12"]],params[:month]), { :index => nil}) %>
         <%= select_tag("year", options_for_select(["2008","2009"],params[:year]), { :index => nil}) %>
         <%= submit_tag "Pesquisar" %>
 	<% end %>
  	</div>
-</div>
- 
-<div>
+  	      <img src="/images/imgprint.jpg?1241277845" onclick="window.print()" />
+  	      <br>
+  	      <br>
+ 	<div>
     <%= link_to 'Voltar para página principal', funcionarios_path %>
 </div>
+</div>
+</div> 
+ 
+
 <table border="0" cellspacing="0" cellpadding="0" class="wide forums">
   <tr>
   	<th class="la" width="20%">Dia</th>
@@ -40,7 +59,7 @@
     <td><%=h @funcionario.formathora(marcacaoponto.hora2) %></td>
     <td><%=h @funcionario.formathora(marcacaoponto.hora3) %></td>
     <td><%=h @funcionario.formathora(marcacaoponto.hora4) %></td>
-    <td><%=h @funcionario.horastrabalhadasdia(marcacaoponto.data) %></td>
+    <td><b><%=h @funcionario.horastrabalhadasdia(marcacaoponto.data) %></b></td>
   </tr>
   <% end %>
   <tr>
@@ -53,4 +72,10 @@
        </tr>
 </table>
 <p>
+<p>
+<div class="detalhesprint">
+    <%= @funcionario.hojeporextenso %><p><p>
+    ______________________________________<BR>
+         ASSINATURA DO FUNCIONÁRIO
+</div>        
 

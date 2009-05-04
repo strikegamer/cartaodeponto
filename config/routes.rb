@@ -2,6 +2,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :marcacaopontos
 
   map.resources :funcionarios
+  
+  map.root :controller => "funcionarios", :action => "index"
 
   # The priority is based upon order of creation: first created -> highest priority.
 
