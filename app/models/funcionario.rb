@@ -2,34 +2,48 @@ class Funcionario < ActiveRecord::Base
 	has_many :marcacaopontos
 	
 	def marcar_ponto(tipomarcacao)
-		self.marcacaopontos.create(:data => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day), :hora1 => DateTime.now)
-        unless self.save
-          self.reload
-          ultima_marcacao = self.marcacaopontos.last
-          novohorario = DateTime.now
-          if ultima_marcacao.hora2.nil?
-      	    if tipomarcacao == "SaidaAlmoco" || tipomarcacao == "PontoManual"
-      	      if ultima_marcacao.hora1.strftime("%H:%M") != novohorario.strftime("%H:%M")	
-                 ultima_marcacao.hora2 = novohorario
+	  if fimdesemana(DateTime.now.wday) == false
+	    if DateTime.now.hour > 6 
+		      self.marcacaopontos.create(:data => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day), :hora1 => DateTime.now)
+          unless self.save
+            self.reload
+            ultima_marcacao = self.marcacaopontos.last
+            novohorario = DateTime.now
+            if ultima_marcacao.hora2.nil?
+      	     if tipomarcacao == "SaidaAlmoco" || tipomarcacao == "PontoManual"
+      	        if ultima_marcacao.hora1.strftime("%H:%M") != novohorario.strftime("%H:%M")	
+                   ultima_marcacao.hora2 = novohorario
+                   ultima_marcacao.save
+                end
+             end
+            elsif ultima_marcacao.hora3.nil?
+        	    if tipomarcacao == "RetornoAlmoco" || tipomarcacao == "PontoManual"
+        	      if ultima_marcacao.hora2.strftime("%H:%M") != novohorario.strftime("%H:%M")
+                 ultima_marcacao.hora3 = novohorario
                  ultima_marcacao.save
+                end
+              end
+            elsif ultima_marcacao.hora4.nil?
+        	    if tipomarcacao == "SaidaDia" || tipomarcacao == "PontoManual"
+        	      if ultima_marcacao.hora3.strftime("%H:%M") != novohorario.strftime("%H:%M")
+        	        if novohorario.hour >= 17
+                    ultima_marcacao.hora4 = novohorario
+                    ultima_marcacao.save
+                  end
+                end
               end
             end
-          elsif ultima_marcacao.hora3.nil?
-      	    if tipomarcacao == "RetornoAlmoco" || tipomarcacao == "PontoManual"
-      	      if ultima_marcacao.hora2.strftime("%H:%M") != novohorario.strftime("%H:%M")
-               ultima_marcacao.hora3 = novohorario
-               ultima_marcacao.save
-              end
-            end
-          elsif ultima_marcacao.hora4.nil?
-      	    if tipomarcacao == "SaidaDia" || tipomarcacao == "PontoManual"
-      	      if ultima_marcacao.hora3.strftime("%H:%M") != novohorario.strftime("%H:%M")
-                ultima_marcacao.hora4 = novohorario
-                ultima_marcacao.save
-              end
-            end
-          end
-       end
+          end  
+      end
+    end
+  end
+    
+    def fimdesemana(diadasemana)
+      if diadasemana == 6 || diadasemana == 7
+        return true
+      else
+        return false
+      end
     end
     
     
