@@ -13,19 +13,19 @@
   </p>
   <p>
     <%= f.label :hora1 %><br />
-    <%= f.text_field :hora1, :value => @marcacaoponto.data.strftime("%Y-%m-%d") + ' ' + @marcacaoponto.funcionario.formathora(@marcacaoponto.hora1) %>
+    <%= f.text_field :hora1, :value => @marcacaoponto.funcionario.formathora(@marcacaoponto.hora1) %>
   </p>
   <p>
     <%= f.label :hora2 %><br />
-    <%= f.text_field :hora2, :value => @marcacaoponto.data.strftime("%Y-%m-%d") + ' ' + @marcacaoponto.funcionario.formathora(@marcacaoponto.hora2) %>
+    <%= f.text_field :hora2, :value => @marcacaoponto.funcionario.formathora(@marcacaoponto.hora2) %>
   </p>
   <p>
     <%= f.label :hora3 %><br />
-    <%= f.text_field :hora3, :value => @marcacaoponto.data.strftime("%Y-%m-%d") + ' ' + @marcacaoponto.funcionario.formathora(@marcacaoponto.hora3) %>
+    <%= f.text_field :hora3, :value => @marcacaoponto.funcionario.formathora(@marcacaoponto.hora3) %>
   </p>
   <p>
     <%= f.label :hora4 %><br />
-    <%= f.text_field :hora4, :value => @marcacaoponto.data.strftime("%Y-%m-%d") + ' ' + @marcacaoponto.funcionario.formathora(@marcacaoponto.hora4) %>
+    <%= f.text_field :hora4, :value => @marcacaoponto.funcionario.formathora(@marcacaoponto.hora4) %>
   </p>
   <p>
     <%= f.submit "Update" %>
