@@ -156,14 +156,14 @@ class Funcionario < ActiveRecord::Base
   	 return Time.now.day.to_s + " de " + mes + " de " + Time.now.year.to_s  	  
 	  end
 
-    def horastrabalhadasdia(data)
+    def horastrabalhadasdia(id)
       # debugger
       begin 
-       marcacaopontos = self.marcacaopontos.find(:all,:conditions => ["(data = ?)", data.to_datetime])
-       hora1 = convertparaminutos(marcacaopontos[0].hora1)
-       hora2 = convertparaminutos(marcacaopontos[0].hora2)
-       hora3 = convertparaminutos(marcacaopontos[0].hora3)
-       hora4 = convertparaminutos(marcacaopontos[0].hora4)
+       marcacaopontos = Marcacaoponto.find(id)
+       hora1 = convertparaminutos(marcacaopontos.hora1)
+       hora2 = convertparaminutos(marcacaopontos.hora2)
+       hora3 = convertparaminutos(marcacaopontos.hora3)
+       hora4 = convertparaminutos(marcacaopontos.hora4)
 
        parcial1 = hora2 - hora1
        horaparcial1 =  (parcial1 / 60).to_i
