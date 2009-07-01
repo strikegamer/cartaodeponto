@@ -202,7 +202,7 @@ class Funcionario < ActiveRecord::Base
            totalgeralminutos = 0
            for marcacaoponto in @marcacaopontos
              begin
-               horadia = horastrabalhadasdia(marcacaoponto.data)
+               horadia = horastrabalhadasdia(marcacaoponto.id)
                totalminutos = horadia.split(':')[0].to_i
                totalminutos = totalminutos * 60
                totalminutos = totalminutos + horadia.split(':')[1].to_i
