@@ -10,6 +10,10 @@
     <%= f.label :funcionario_id %><br />
 	<%= f.collection_select(:funcionario_id, Funcionario.find(:all), :id, :nome, {}, {}) %>
   </p>
+  <p>
+      <%= f.label :data %><br />
+      <%= f.date_select :data %>
+    </p>
     <%= f.submit "Marcar Ponto" %>
   </p>
 <% end %>
