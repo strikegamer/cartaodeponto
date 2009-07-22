@@ -1,7 +1,7 @@
 class Funcionario < ActiveRecord::Base
 	has_many :marcacaopontos
 	
-	def marcar_ponto(tipomarcacao)
+	  def marcar_ponto(tipomarcacao)
 	  if fimdesemana(DateTime.now.wday) == false
 	    if DateTime.now.hour > 6 
 		      self.marcacaopontos.create(:data => DateTime.new(DateTime.now.year, DateTime.now.month, DateTime.now.day), :hora1 => DateTime.now)
@@ -45,8 +45,7 @@ class Funcionario < ActiveRecord::Base
         return false
       end
     end
-    
-    
+        
     def desmarcar_ponto
 		  ultima_marcacao = self.marcacaopontos.last
           if ultima_marcacao.hora4.nil? == false
@@ -61,7 +60,7 @@ class Funcionario < ActiveRecord::Base
           end    
     end
     
-     def ultima_marcacao
+    def ultima_marcacao
      	  ultima_marcacao = self.marcacaopontos.last
           if ultima_marcacao.hora4.nil? == false
       	      return ultima_marcacao.hora4.strftime("%d/%m/%Y %H:%M")
@@ -72,7 +71,7 @@ class Funcionario < ActiveRecord::Base
       	  elsif ultima_marcacao.hora1.nil? == false
       	     return ultima_marcacao.hora1.strftime("%d/%m/%Y %H:%M")
           end 
-    end
+     end
     
     def horarios_dia
     	 retorno = "Horarios de hoje:\n"    	
@@ -100,8 +99,7 @@ class Funcionario < ActiveRecord::Base
             return "nada carai"	
   	   end
     end
-    
-    
+        
     def formathora(hora)
   		if hora.nil? == true
   			return ""
@@ -151,6 +149,7 @@ class Funcionario < ActiveRecord::Base
     	end
     	return result
 	  end  	
+  
   	def hojeporextenso
   	 mes = mesbr(Time.now.month.to_s)  	 
   	 return Time.now.day.to_s + " de " + mes + " de " + Time.now.year.to_s  	  
@@ -191,7 +190,7 @@ class Funcionario < ActiveRecord::Base
      end  
     end
 
-      def horastrabalhadasnomes(mes,ano)
+    def horastrabalhadasnomes(mes,ano)
         year = ano.to_i   
         month = mes.to_i   
         first = Date.civil(year, month, 1)   
@@ -221,7 +220,7 @@ class Funcionario < ActiveRecord::Base
         else
             return "não encontrados dias trabalhados neste mês" 
         end     
-    end
+      end
 
     def convertparaminutos(data)
         result = data.hour * 60

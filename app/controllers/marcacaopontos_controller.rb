@@ -43,16 +43,24 @@ class MarcacaopontosController < ApplicationController
   # POST /marcacaopontos
   # POST /marcacaopontos.xml
   def create
-  	respond_to do |format|
-  	  @funcionario = Funcionario.find(params[:marcacaoponto][:funcionario_id])
-  	  
-  	  @funcionario.marcar_ponto("aowpa")
-  	  flash[:notice] = 'Ponto Registrado!'
-      format.html { redirect_to(marcacaopontos_path) }
-      format.xml  { head :ok }
-     end
+      #@funcionario = Funcionario.find(params[:marcacaoponto][:funcionario_id])
+  	  #@funcionario.marcar_ponto("aowpa")
+  	  #flash[:notice] = 'Ponto Criado!'
+      #format.html { redirect_to(marcacaopontos_path) }
+      #format.xml  { head :ok }
+        @marcacaoponto = Marcacaoponto.new(params[:marcacaoponto])
+        respond_to do |format|
+          if @marcacaoponto.save
+            flash[:notice] = 'Marcacao de Ponto criada com sucesso.'
+            format.html { redirect_to(marcacaopontos_path) }
+            format.xml  { head :ok }
+          else
+            format.html { render :action => "new" }
+            format.xml  { render :xml => @marcacaoponto.errors, :status => :unprocessable_entity }
+          end
+        end
   end
-
+  
   # PUT /marcacaopontos/1
   # PUT /marcacaopontos/1.xml
   def update

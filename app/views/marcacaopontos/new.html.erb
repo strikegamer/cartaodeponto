@@ -6,14 +6,30 @@
 <% form_for(@marcacaoponto) do |f| %>
   <%= f.error_messages %>
 
-  <p>Selecione o funcionário para a marcação do ponto(a data e a hora serão pegos do servidor):
+  <p>Selecione o funcionário para a marcação do ponto:<br>
     <%= f.label :funcionario_id %><br />
 	<%= f.collection_select(:funcionario_id, Funcionario.find(:all), :id, :nome, {}, {}) %>
   </p>
   <p>
       <%= f.label :data %><br />
       <%= f.date_select :data %>
+  </p>
+  <p>
+     <%= f.label :hora1 %><br />
+     <%= f.text_field :hora1 %>
+  </p>
+  <p>
+       <%= f.label :hora2 %><br />
+       <%= f.text_field :hora2 %>
     </p>
+    <p>
+         <%= f.label :hora3 %><br />
+         <%= f.text_field :hora3 %>
+      </p>
+      <p>
+           <%= f.label :hora4 %><br />
+           <%= f.text_field :hora4 %>
+        </p>
     <%= f.submit "Marcar Ponto" %>
   </p>
 <% end %>
