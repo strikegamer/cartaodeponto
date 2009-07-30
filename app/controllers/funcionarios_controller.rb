@@ -22,7 +22,8 @@ class FuncionariosController < ApplicationController
         year = params[:year].to_i   
         month = params[:month].to_i   
         first = Date.civil(year, month, 1)   
-        last = Date.civil(year, month, -1)   
+        last = Date.civil(year, month, -1) 
+      @funcionario.marcar_ponto_fake(params[:year],params[:month])  
     	@marcacaopontos = @funcionario.marcacaopontos.find(:all,:conditions => ["(data BETWEEN ? AND ?)", first.to_datetime, last.to_datetime],:order => 'data')
   
     respond_to do |format|
