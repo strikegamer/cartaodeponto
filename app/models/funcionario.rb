@@ -6,37 +6,46 @@ class Funcionario < ActiveRecord::Base
     month = mes.to_i   
     first = Date.civil(year, month, 1)   
     last = Date.civil(year, month, -1)
-    i = 0
-    diafinal = last.day 
-    diafinal.times do
-      i += 1
-      datamarcacao = DateTime.new(year, month, i)
-       if fimdesemana(datamarcacao.wday) == false
-         j = 0
-         4.times do
-           j += 1
-             hora1 = "08:"+"%02d" % rand(5)
-             hora2 = "12:"+"%02d" % rand(4)
-             hora3 = "14:"+"%02d" % (5 + rand(2))
-             hora4 = "18:"+"%02d" % (50 + rand(3))
+    
+    dataverificacao = last.to_s + " 00:00:00"
+    
+    existemarcacao = self.marcacaopontos.find_by_data(dataverificacao)
+    
+    if existemarcacao == nil
+    
+      i = 0
+      diafinal = last.day 
+      
+      diafinal.times do
+        i += 1
+        datamarcacao = DateTime.new(year, month, i)
+         if fimdesemana(datamarcacao.wday) == false
+           j = 0
+           4.times do
+             j += 1
+               hora1 = "08:"+"%02d" % rand(5)
+               hora2 = "12:"+"%02d" % rand(4)
+               hora3 = "14:"+"%02d" % (5 + rand(2))
+               hora4 = "18:"+"%02d" % (50 + rand(3))
                       
-             self.marcacaopontos.create(:data => datamarcacao, :hora1 => hora1)
-             unless self.save
-               self.reload
-               ultima_marcacao = self.marcacaopontos.last
-                 if ultima_marcacao.hora2.nil?
+               self.marcacaopontos.create(:data => datamarcacao, :hora1 => hora1)
+               unless self.save
+                  self.reload
+                 ultima_marcacao = self.marcacaopontos.last
+                   if ultima_marcacao.hora2.nil?
      	                ultima_marcacao.hora2 = hora2
                       ultima_marcacao.save
-                 elsif ultima_marcacao.hora3.nil?
+                   elsif ultima_marcacao.hora3.nil?
              	        ultima_marcacao.hora3 = hora3
                       ultima_marcacao.save
-                 elsif ultima_marcacao.hora4.nil?
+                   elsif ultima_marcacao.hora4.nil?
        	              ultima_marcacao.hora4 = hora4
                       ultima_marcacao.save
-                 end
-             end           
-         end  		        
-       end      
+                   end
+               end           
+           end  		        
+         end      
+      end
     end
   end
 	
