@@ -17,7 +17,7 @@ namespace :botmsn do
 
     # connect events
     msnsock.signed_in = lambda { puts "Signed in"
-	    msnsock.change_nickname "PONTO PLANOBE (BETA) - Me chamem se precisarem :)"
+	    msnsock.change_nickname "ROBO DO JEAN(BETA) - Me chamem se precisarem :)"
     }
 
 # display updated buddy, show full contact list
@@ -102,7 +102,9 @@ msnsock.new_chat_session = lambda {|tag, session|
 			  session.say func.horarios_dia
 			end
 		when /^b.o.z.o/
-			session.say "http://snowflakessociety.zip.net/images/Bozo2004.gif"	   	  
+			session.say "http://snowflakessociety.zip.net/images/Bozo2004.gif"
+ 		when /^WTF?/
+		  session.say "q?/?/? cmofas?//?/?/ hahahaha"
 		when /^/
 			session.say "\n Nao entendi!\n\n Palavras que eu entendo:\n help - Exibe esta ajuda.\n marcar - Marca atual horario em seu cartao de ponto.\n desmarcar - Desmarca ultimo horario preenchido do dia(menos o de entrada)\n ultimo - Mostra o ultimo horario marcado \n hoje - Mostra os horarios de hoje \n quit - FECHA o ponto :|"
 		end

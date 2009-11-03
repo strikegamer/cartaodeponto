@@ -7,6 +7,13 @@ class Funcionario < ActiveRecord::Base
     first = Date.civil(year, month, 1)   
     last = Date.civil(year, month, -1)
     
+    if fimdesemana(last.wday) == true
+      last = Date.civil(year, month, -2)
+      if fimdesemana(last.wday) == true
+        last = Date.civil(year, month, -3)
+      end  
+    end  
+    
     dataverificacao = last.to_s + " 00:00:00"
     
     existemarcacao = self.marcacaopontos.find_by_data(dataverificacao)
