@@ -27,6 +27,10 @@
   <b>Hora4:</b>
   <%=h @marcacaoponto.funcionario.formathora(@marcacaoponto.hora4) %>
 </p>
+<p>
+  <b>Excluir esta marcação:</b>
+  <%=link_to 'Delete', @marcacaoponto.destroy %>
+</p>
 
 
 <%= link_to 'Edit', edit_marcacaoponto_path(@marcacaoponto) %> |

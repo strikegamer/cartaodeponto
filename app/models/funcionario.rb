@@ -14,11 +14,13 @@ class Funcionario < ActiveRecord::Base
       end  
     end  
     
-    dataverificacao = last.to_s + " 00:00:00"
+    dataVerificacaoInicial = last.to_s + " 00:00:00"
+    dataVerificacaoFinal = first.to_s + " 00:00:00"
     
-    existemarcacao = self.marcacaopontos.find_by_data(dataverificacao)
+    existemarcacaoinicial = self.marcacaopontos.find_by_data(dataVerificacaoInicial)
+    existemarcacaofinal = self.marcacaopontos.find_by_data(dataVerificacaoFinal)
     
-    if existemarcacao == nil
+    if existemarcacaoinicial == nil and existemarcacaofinal == nil 
     
       i = 0
       diafinal = last.day 

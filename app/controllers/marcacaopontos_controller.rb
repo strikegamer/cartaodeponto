@@ -81,11 +81,14 @@ class MarcacaopontosController < ApplicationController
   # DELETE /marcacaopontos/1
   # DELETE /marcacaopontos/1.xml
   def destroy
+    month = params[:mes]
+    year = params[:ano]
     @marcacaoponto = Marcacaoponto.find(params[:id])
+    @funcionario = @marcacaoponto.funcionario
     @marcacaoponto.destroy
 
     respond_to do |format|
-      format.html { redirect_to(marcacaopontos_url) }
+      format.html { redirect_to(:back) }
       format.xml  { head :ok }
     end
   end

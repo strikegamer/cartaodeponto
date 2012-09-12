@@ -13,6 +13,14 @@
 	font-weight:bold;
 }
 
+.detalhesedit {
+	display:none;
+}
+
+.detalheseditbody {
+	display:none;
+}
+
 
 html{
 	overflow-y: scroll;

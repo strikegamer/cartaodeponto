@@ -5,6 +5,22 @@
 	display:none;
 }
 
+.detalheseditheader {
+	background:#333;
+	color:white;
+	font-size:0.8em;
+	padding:3px 10px;
+	border:1px solid #222;
+}
+
+.detalheseditbody {
+	background:#fff;
+	color:white;
+	font-size:0.8em;
+	padding:3px 10px;
+	border:1px solid #222;
+}
+
 html{
 	overflow-y: scroll;
 }
